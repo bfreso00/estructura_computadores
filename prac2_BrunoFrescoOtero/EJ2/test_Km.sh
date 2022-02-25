@@ -1,7 +1,7 @@
 echo "Running tests..."
 echo
 
-output=$(./a.out  < resultados.txt)
+output=$(./a.out  < datos.txt)
 expected_output="Las millas son: 6.25 Los pies son: 32808.39 Las yardas son: 10936.13"
 
 if [ $? -eq 0 ] ; then

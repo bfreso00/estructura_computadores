@@ -1,8 +1,8 @@
 echo "Running tests..."
 echo
 
-output=$(./a.out  < resultados.txt)
-expected_output="El valor en grados F de la cantidad introducida es: 75.56"
+output=$(./a.out  < datos.txt)
+expected_output="El valor en grados F de la cantidad introducida es: 50"
 
 if [ $? -eq 0 ] ; then
   echo "Pass: Program exited zero"
