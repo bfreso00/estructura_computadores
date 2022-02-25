@@ -2,7 +2,7 @@ echo "Running tests..."
 echo
 
 output=$(./a.out  < resultados.txt)
-expected_output="Las millas son: 6.21 \nLos pies son: 32808.4 \nLas yardas son: 10936.1"
+expected_output="Las millas son: 6.25 \nLos pies son: 32808.39 \nLas yardas son: 10936.13"
 
 if [ $? -eq 0 ] ; then
   echo "Pass: Program exited zero"
