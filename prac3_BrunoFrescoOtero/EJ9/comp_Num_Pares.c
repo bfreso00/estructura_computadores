@@ -1,7 +1,7 @@
 #include <stdio.h>
+
 int main(){
-	char cadena;
-	int num1, num2, cal_par;
+	int num1, num2, resto;
 	do{
 		printf("Introduzca el primer número:");
 		scanf("%d", &num1);
@@ -10,14 +10,15 @@ int main(){
 		if(num1 >= num2) {
 			printf("El primer número debe ser menor que el segundo.\n");
 		} else {
-			for(num2; num2>=num1; num2--){
-				cal_par = num2 % 2 ;
-				if(cal_par = 0){
-					cadena += num2;
+			while(num2 >= num1){
+				resto = num2 % 2;
+				if(resto == 0){
+					printf("Numero par encontrado: %d\n", num2);
 				}
+				num2 = num2 - 1;
 			}
-			printf("Los numeros pares (de mayor a menor) entre los números introducidos son: %c\n", cadena);
 			return 0;
-		}
-	} while(num1>=num2);
+			}
+	} while(num1 >= num2);		
 }
+
