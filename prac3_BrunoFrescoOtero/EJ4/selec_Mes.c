@@ -31,6 +31,5 @@ int main()
 			 break;
 		default: printf("Error.\n");
 	}
-	printf("Fin del algoritmo.\n");
 	return 0;
 }

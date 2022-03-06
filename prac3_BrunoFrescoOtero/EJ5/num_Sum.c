@@ -15,6 +15,5 @@ int main()
 	} else {
 		printf("Introduzca un numero mayor o igual a 1.\n");
 	}
-	printf("Fin del algoritmo.\n");
 	return 0;
 }

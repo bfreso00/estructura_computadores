@@ -14,6 +14,5 @@ int main()
 	} else {
 		printf("Debe introducir un numero mayor que 0.\n");
 	}
-	printf("Fin del algoritmo.\n");
 	return 0;
 }

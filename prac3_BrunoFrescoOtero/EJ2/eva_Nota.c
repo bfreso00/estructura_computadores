@@ -13,6 +13,5 @@ int main()
 	} else {
 		printf("El alumno tiene un suspenso.\n");
 	}
-	printf("Fin del algoritmo.\n");
 	return 0;
 }
