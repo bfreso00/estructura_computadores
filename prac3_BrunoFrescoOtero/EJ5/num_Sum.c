@@ -11,7 +11,7 @@ int main()
 			total = total + i;
 			i = i + 1;
 		}
-		printf("La suma es: %d \n", total);
+		printf("La suma es: %d\n", total);
 	} else {
 		printf("Introduzca un numero mayor o igual a 1.\n");
 	}

@@ -2,7 +2,7 @@
 int main()
 {
 	int num, total, i;
-	printf("Escriba un números a sumar: ");
+	printf("Escriba un número: ");
 	scanf("%d", &num);
 	if(num == 3){
 		printf("El numero introducido es el 3.\n");
