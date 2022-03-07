@@ -25,32 +25,8 @@ ej8.out:
 ej9.out:
 	gcc prac3_BrunoFrescoOtero/EJ9/comp_Num_Pares.c
 	
-clean1:
-	rm ej1.out
-	
-clean2:
-	rm ej2.out
-	
-clean3:
-	rm ej3.out
-	
-clean4:
-	rm ej4.out
-
-clean5:
-	rm ej5.out
-
-clean6:
-	rm ej6.out
-
-clean7:
-	rm ej7.out
-	
-clean8:
-	rm ej8.out
-	
-clean9:
-	rm ej9.out
+clean:
+	rm ej1.out ej2.out ej3.out ej4.out ej5.out ej6.out ej7.out ej8.out ej9.out
 	
 test1: ej1.out
 	bash prac3_BrunoFrescoOtero/EJ1/test1.sh
