@@ -1,8 +1,8 @@
 echo "Running tests..."
 echo
 
-output=$(./a.out  < entrada2.txt)
-expected_output="El numero introducido no es el 3."
+output=$(./a.out  < entrada.txt)
+expected_output="El factorial de 5 es: 120"
 
 if [ $? -eq 0 ] ; then
   echo "Pass: Program exited zero"
