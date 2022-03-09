@@ -1,7 +1,7 @@
 echo "Running tests..."
 echo
 
-output=$(./a.out  < datos.txt)
+output=$(./ej3.out  < EJ3/datos.txt)
 expected_output="El valor en grados F de la cantidad introducida es: 50"
 
 if [ $? -eq 0 ] ; then

@@ -1,7 +1,7 @@
 echo "Running tests..."
 echo
 
-output=$(./a.out  < datos.txt)
+output=$(./ej1.out  < EJ1/datos.txt)
 expected_output="El número introducido es: 10"
 
 if [ $? -eq 0 ] ; then
