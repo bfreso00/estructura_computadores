@@ -1,29 +1,29 @@
 ej1.out:
-	gcc EJ1/muestra3.c
+	gcc EJ1/muestra3.c -o ej1.out
 
 ej2.out:
-	gcc EJ2/eva_Nota.c
+	gcc EJ2/eva_Nota.c -o ej2.out
 	
 ej3.out:
-	gcc EJ3/eva_Nota2.c	
+	gcc EJ3/eva_Nota2.c -o ej3.out	
 	
 ej4.out:
-	gcc EJ4/selec_Mes.c
+	gcc EJ4/selec_Mes.c -o ej4.out
 	
 ej5.out:
-	gcc EJ5/num_Sum.c
+	gcc EJ5/num_Sum.c -o ej5.out
 	
 ej6.out:
-	gcc EJ6/potencia.c
+	gcc EJ6/potencia.c -o ej6.out
 	
 ej7.out:
-	gcc EJ7/calc_Volu.c
+	gcc EJ7/calc_Volu.c -o ej7.out
 
 ej8.out:
-	gcc EJ8/calc_Volu_Cond.c
+	gcc EJ8/calc_Volu_Cond.c -o ej8.out
 
 ej9.out:
-	gcc EJ9/comp_Num_Pares.c
+	gcc EJ9/comp_Num_Pares.c -o ej9.out
 	
 clean:
 	rm ej1.out ej2.out ej3.out ej4.out ej5.out ej6.out ej7.out ej8.out ej9.out
