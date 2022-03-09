@@ -1,7 +1,7 @@
 echo "Running tests..."
 echo
 
-output=$(./a.out  < entrada.txt)
+output=$(./ej1.out  < EJ1/entrada.txt)
 expected_output="El alumno tiene un aprobado."
 
 if [ $? -eq 0 ] ; then

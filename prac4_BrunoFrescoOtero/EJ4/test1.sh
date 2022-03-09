@@ -1,7 +1,7 @@
 echo "Running tests..."
 echo
 
-output=$(./a.out  < entrada1.txt)
+output=$(./ej4.out  < EJ4/entrada1.txt)
 expected_output="El volumen del cono es: 37.68"
 
 if [ $? -eq 0 ] ; then

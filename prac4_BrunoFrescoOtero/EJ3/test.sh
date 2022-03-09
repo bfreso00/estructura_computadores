@@ -1,7 +1,7 @@
 echo "Running tests..."
 echo
 
-output=$(./a.out  < entrada.txt)
+output=$(./ej3.out  < EJ3/entrada.txt)
 expected_output="La potencia es: 9"
 
 if [ $? -eq 0 ] ; then

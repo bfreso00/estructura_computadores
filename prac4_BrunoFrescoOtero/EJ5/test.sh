@@ -1,7 +1,7 @@
 echo "Running tests..."
 echo
 
-output=$(./a.out  < entrada.txt)
+output=$(./ej5.out  < EJ5/entrada.txt)
 expected_output="Numero par encontrado: 4"
 
 if [ $? -eq 0 ] ; then

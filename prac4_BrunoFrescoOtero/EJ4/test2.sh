@@ -1,7 +1,7 @@
 echo "Running tests..."
 echo
 
-output=$(./a.out  < entrada2.txt)
+output=$(./ej4.out  < EJ4/entrada2.txt)
 expected_output="El volumen del ortoedro es: 48"
 
 if [ $? -eq 0 ] ; then

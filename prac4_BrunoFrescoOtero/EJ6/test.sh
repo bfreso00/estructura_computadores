@@ -1,7 +1,7 @@
 echo "Running tests..."
 echo
 
-output=$(./a.out  < entrada.txt)
+output=$(./ej6.out  < EJ6/entrada.txt)
 expected_output="El factorial de 5 es: 120"
 
 if [ $? -eq 0 ] ; then

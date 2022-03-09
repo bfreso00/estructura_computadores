@@ -1,7 +1,7 @@
 echo "Running tests..."
 echo
 
-output=$(./a.out  < entrada.txt)
+output=$(./ej2.out  < EJ2/entrada.txt)
 expected_output="La suma es: 6"
 
 if [ $? -eq 0 ] ; then
