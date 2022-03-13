@@ -9,6 +9,5 @@ int main()
 	} else {
 		printf("El numero introducido no es el 3.\n");
 	}
-	printf("Fin del algoritmo.\n");
 	return 0;
 }
