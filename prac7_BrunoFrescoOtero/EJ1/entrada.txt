@@ -1,0 +1,4 @@
+Hola, buenos dias.
+Hola, buenas dias.
+Las dos cadenas son iguales.
+Que tal estas?
