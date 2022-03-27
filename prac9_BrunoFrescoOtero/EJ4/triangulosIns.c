@@ -13,7 +13,7 @@ struct Triangulo{
 	double area;
 };
 
-void leeTriangulos(FILE *pFile, struct Punto *p, struct Triangulo *t);
+void leeTriangulos(FILE *pFile, struct Triangulo *t);
 double calcPerimetro(double l1, double l2, double l3);
 double calcArea(double l1, double l2, double l3, double semiPer);
 int maxPer(struct Triangulo *t);
@@ -22,16 +22,15 @@ int main(int argc, char *argv[]) {
 	FILE *p;
 	int i, perMax, areaMax;
 	double lado1, lado2, lado3, semiPerimetro;
-	struct Punto *punt;
 	struct Triangulo *trian;
-	punt = (struct Punto *)malloc(sizeof(struct Punto)*3);
 	trian = (struct Triangulo *)malloc(sizeof(struct Triangulo)*3);
+	(trian+i)->puntos = (struct Punto *)malloc(sizeof(struct Punto)*3);
 	if(argc == 2){
-		leeTriangulos(p, punt, trian);
+		leeTriangulos(p, trian);
 		for(i=0; i<3; i++){
-			lado1 = sqrt(pow((trian+i)->((p+1)->c1) - (trian+i)->((p+0)->c1), 2) + pow((trian+i)->((p+1)->c2) - (trian+i)->((p+0)->c2), 2) + pow((trian+i)->((p+1)->c3) - (trian+i)->((p+0)->c3), 2));
-			lado2 = sqrt(pow((trian+i)->((p+2)->c1) - (trian+i)->((p+1)->c1), 2) + pow((trian+i)->((p+2)->c2) - (trian+i)->((p+1)->c2), 2) + pow((trian+i)->((p+2)->c3) - (trian+i)->((p+1)->c3), 2));
-			lado3 = sqrt(pow((trian+i)->((p+0)->c1) - (trian+i)->((p+2)->c1), 2) + pow((trian+i)->((p+0)->c2) - (trian+i)->((p+2)->c2), 2) + pow((trian+i)->((p+0)->c3) - (trian+i)->((p+2)->c3), 2));
+			lado1 = sqrt(pow((trian+i)->puntos[1].c1 - (trian+i)->puntos[0].c1, 2) + pow((trian+i)->puntos[1].c2 - (trian+i)->puntos[0].c2, 2) + pow((trian+i)->puntos[1].c3 - (trian+i)->puntos[0].c3, 2));
+			lado2 = sqrt(pow((trian+i)->puntos[2].c1 - (trian+i)->puntos[1].c1, 2) + pow((trian+i)->puntos[2].c2 - (trian+i)->puntos[1].c2, 2) + pow((trian+i)->puntos[2].c3 - (trian+i)->puntos[1].c3, 2));
+			lado3 = sqrt(pow((trian+i)->puntos[0].c1 - (trian+i)->puntos[2].c1, 2) + pow((trian+i)->puntos[0].c2 - (trian+i)->puntos[2].c2, 2) + pow((trian+i)->puntos[0].c3 - (trian+i)->puntos[2].c3, 2));
 			(trian+i)->perimetro = calcPerimetro(lado1, lado2, lado3);
 			semiPerimetro = ((trian+i)->perimetro)/2;
 			(trian+i)->area = calcArea(lado1, lado2, lado3, semiPerimetro);
@@ -40,7 +39,7 @@ int main(int argc, char *argv[]) {
 		printf("El triangulo con mas perimetro es el numero %d.\n", perMax+1);
 		printf("Puntos:\n");
 		for(i=0; i<3; i++){
-			printf("Punto %d: (%d,%d,%d)\n", i+1, (trian+perMax)->((p+i)->c1), (trian+perMax)->((p+i)->c2), (trian+perMax)->((p+i)->c3));
+			printf("Punto %d: (%d,%d,%d)\n", i+1, (trian+perMax)->puntos[i].c1, (trian+perMax)->puntos[i].c2, (trian+perMax)->puntos[i].c3);
 		}
 		printf("Perimetro: %f", (trian+perMax)->perimetro);
 		printf("Area: %f", (trian+perMax)->area);
@@ -48,7 +47,7 @@ int main(int argc, char *argv[]) {
 		printf("El triangulo con mas area es el numero %d.\n", areaMax+1);
 		printf("Puntos:\n");
 		for(i=0; i<3; i++){
-			printf("Punto %d: (%d,%d,%d)\n", i+1, (trian+areaMax)->((p+i)->c1), (trian+areaMax)->((p+i)->c2), (trian+areaMax)->((p+i)->c3));
+			printf("Punto %d: (%d,%d,%d)\n", i+1, (trian+areaMax)->puntos[i].c1, (trian+areaMax)->puntos[i].c2, (trian+areaMax)->puntos[i].c3);
 		}
 		printf("Perimetro: %f", (trian+areaMax)->perimetro);
 		printf("Area: %f", (trian+areaMax)->area);
@@ -58,7 +57,7 @@ int main(int argc, char *argv[]) {
 	return 0;
 }
 
-void leeTriangulo(FILE *pFile, struct Punto *p, struct Triangulo *t){
+void leeTriangulos(FILE *pFile, struct Triangulo *t){
 	int i;
 	pFile = fopen("coordenadas.txt", "r");
 	if(pFile == NULL){
@@ -67,12 +66,9 @@ void leeTriangulo(FILE *pFile, struct Punto *p, struct Triangulo *t){
 	} else {
 		do{
 			if(!feof(pFile)){
-				fscanf(pFile,"%d %d %d;%d %d %d;%d %d %d", &(p+0)->c1, &(p+0)->c2, &(p+0)->c3, 
-									    &(p+1)->c1, &(p+1)->c2, &(p+1)->c3, 
-									    &(p+2)->c1, &(p+2)->c2, &(p+2)->c3);
-				((t+i)->(puntos+0)) = (p+0);
-				((t+i)->(puntos+1)) = (p+1);
-				((t+i)->(puntos+2)) = (p+2);
+				fscanf(pFile,"%d %d %d;%d %d %d;%d %d %d", &(t+i)->puntos[0].c1, &(t+i)->puntos[0].c2, &(t+i)->puntos[0].c3, 
+									    &(t+i)->puntos[1].c1, &(t+i)->puntos[1].c2, &(t+i)->puntos[1].c3, 
+									    &(t+i)->puntos[2].c1, &(t+i)->puntos[2].c2, &(t+i)->puntos[2].c3);
 				i++;
 			} 
 		}while(!feof(pFile));	
