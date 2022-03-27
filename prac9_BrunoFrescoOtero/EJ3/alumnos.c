@@ -108,14 +108,15 @@ void iniAlumnos(struct Alumno *alumnos, char matrizP[MAX_LINEAS][MAX_CHAR], char
 }
 
 int mediaAlta(struct Alumno *alumnos){
-	int i, mediaMax;
-	float media;
+	int i, maxAlumno;
+	float media, mediaMax;
 	mediaMax = 0;
 	for(i=0; i<4; i++){
 		media = ((alumnos+i)->notas[0] + (alumnos+i)->notas[1])/2;
 		if(media>mediaMax){
-			mediaMax = i;
+			mediaMax = media;
+			maxAlumno = i;
 		}
 	}
-	return mediaMax;
+	return maxAlumno;
 }
