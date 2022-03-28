@@ -1,7 +1,7 @@
 echo "Running tests..."
 echo
 
-output=$(./ej4.out "coordenadas.txt")
+output=$(./ej4.out coordenadas.txt)
 expected_output="El triangulo con mas perimetro es el numero 3.\nPuntos:\nPunto 1: (0,0,0)\nPunto 2: (3,0,0)\nPunto 3: (10,15,0)\nPerimetro: 37.580702\nArea: 22.500000\n" +
 		+"El triangulo con mas area es el numero 3.\nPuntos:\nPunto 1: (0,0,0)\nPunto 2: (3,0,0)\nPunto 3: (10,15,0)\nPerimetro: 37.580702\nArea: 22.500000"
 

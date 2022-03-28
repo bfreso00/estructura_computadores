@@ -1,7 +1,7 @@
 echo "Running tests..."
 echo
 
-output=$(./ej3.out "alumnos.txt")
+output=$(./ej3.out alumnos.txt)
 expected_output="El alumno con mas media es el alumno 4.\nAlejandro\nGarcía Bajo\nPrimera nota: 9.380000\nSegunda nota: 8.200000\n"
 
 if [ $? -eq 0 ] ; then
