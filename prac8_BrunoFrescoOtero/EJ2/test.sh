@@ -1,7 +1,7 @@
 echo "Running tests..."
 echo
 
-output=$(./ej2.out  < entrada.txt)
+output=$(./ej2.out info.txt < entrada.txt)
 expected_output="David González Pérez\nJavier Sánchez Fernández\nNerea Álvarez Álvarez\nPablo Llamazares García\nPaula Martínez Sánchez"
 
 if [ $? -eq 0 ] ; then

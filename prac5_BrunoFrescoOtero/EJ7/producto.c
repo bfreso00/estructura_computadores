@@ -47,23 +47,21 @@ void mostrar_Matriz(int matriz_Para[3][3]){
 	return;
 }
 void producto(int matriz_Para1[3][3], int matriz_Para2[3][3], int matriz_Resultado[3][3]){
-	//FILA 1 COLUMNA 1
-	matriz_Resultado[0][0] = (matriz_Para1[0][0] * matriz_Para2[0][0]) + (matriz_Para1[0][1] * matriz_Para2[1][0]) + 					+ (matriz_Para1[0][2] * matriz_Para2[2][0]);
-	//FILA 1 COLUMNA 2
-	matriz_Resultado[0][1] = (matriz_Para1[0][0] * matriz_Para2[0][1]) + (matriz_Para1[0][1] * matriz_Para2[1][1]) + 					+ (matriz_Para1[0][2] * matriz_Para2[2][1]);
-	//FILA 1 COLUMNA 3
-	matriz_Resultado[0][2] = (matriz_Para1[0][0] * matriz_Para2[0][2]) + (matriz_Para1[0][1] * matriz_Para2[1][2]) + 					+ (matriz_Para1[0][2] * matriz_Para2[2][2]);
-	//FILA 2 COLUMNA 1
-	matriz_Resultado[1][0] = (matriz_Para1[1][0] * matriz_Para2[0][0]) + (matriz_Para1[1][1] * matriz_Para2[1][0]) + 					+ (matriz_Para1[1][2] * matriz_Para2[2][0]);
-	//FILA 2 COLUMNA 2
-	matriz_Resultado[1][1] = (matriz_Para1[1][0] * matriz_Para2[0][1]) + (matriz_Para1[1][1] * matriz_Para2[1][1]) + 					+ (matriz_Para1[1][2] * matriz_Para2[2][1]);
-	//FILA 2 COLUMNA 3
-	matriz_Resultado[1][2] = (matriz_Para1[1][0] * matriz_Para2[0][2]) + (matriz_Para1[1][1] * matriz_Para2[1][2]) + 					+ (matriz_Para1[1][2] * matriz_Para2[2][2]);
-	//FILA 3 COLUMNA 1
-	matriz_Resultado[2][0] = (matriz_Para1[2][0] * matriz_Para2[0][0]) + (matriz_Para1[2][1] * matriz_Para2[1][0]) + 					+ (matriz_Para1[2][2] * matriz_Para2[2][0]);
-	//FILA 3 COLUMNA 2
-	matriz_Resultado[2][1] = (matriz_Para1[2][0] * matriz_Para2[0][1]) + (matriz_Para1[2][1] * matriz_Para2[1][1]) + 					+ (matriz_Para1[2][2] * matriz_Para2[2][1]);
-	//FILA 3 COLUMNA 3
-	matriz_Resultado[2][2] = (matriz_Para1[2][0] * matriz_Para2[0][2]) + (matriz_Para1[2][1] * matriz_Para2[1][2]) + 					+ (matriz_Para1[2][2] * matriz_Para2[2][2]);
+	int i, j, k, suma;
+	suma = 0;
+	i = 0;
+	j = 0;
+	k = 0;
+	for(i; i<3; i++){
+		for(j; j<3; j++){
+			suma = 0;
+			for(k; k<3; k++){
+				suma += matriz_Para1[j][k] * matriz_Para2[k][i];
+			}
+			k = 0;
+			matriz_Resultado[j][i] = suma;
+		}
+		j = 0;
+	}
 	return;
 }
