@@ -43,5 +43,6 @@ fin:
 	addi t1, t1, 10
 	sb t1, (a1)
 	li t1, 0
+	addi a1, a1, 1
 	sb t1, (a1)
 	ret	
